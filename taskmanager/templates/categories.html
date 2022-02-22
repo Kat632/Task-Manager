@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h3 class="teal-text text-darken-2 center-align">Categories</h3>
+<h3 class="light-blue-text text-darken-4 center-align">Categories</h3>
 
 <div class="row">
     <div class="col s12 center-align">
@@ -9,7 +9,6 @@
             Add Category <i class="fas fa-plus-square right"></i>
         </a>
     </div>
-
 </div>
 
 <div class="row">
@@ -20,7 +19,7 @@
                 <span class="card-title">{{ category.category_name }}</span>
             </div>
             <div class="card-action">
-                <a href="#" class="btn green accent-4">Edit</a>
+                <a href="{{ url_for('edit_category', category_id=category.id) }}" class="btn green accent-4">Edit</a>
                 <a href="#" class="btn red">Delete</a>
             </div>
         </div>
