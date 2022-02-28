@@ -15,15 +15,15 @@
     <ul class="collapsible">
         {% for task in tasks|sort(attribute="due_date") %}
         <li>
-            <div class="collapsible-header white-text light-pink darken-4">
+            <div class="collapsible-header black-text light-pink darken-4">
+                <strong>{{ task.task_name }}</strong> : {{ task.due_date.strftime("%d %B, %Y") }}
                 <i class="fas fa-caret-down"></i>
-                <strong>{{ task.task_name}}</strong> : {{ task.due_date.strftime("%d %B, %Y") }}
                 {% if task.is_urgent == True %}
                 <i class="fas fa-exclamation-circle pink-text text-lighten-2"></i>
                 {% endif %}
             </div>
             <div class="collapsible-body">
-                <div><strong>{{ task.category }}</strong></div>
+                <div><strong>{{ task.task_name }}</strong></div>
                 <div>{{ task.task_description }}</div>
                 <div>{{ task.is_urgent }}</div>
                 <div>{{ task.due_date }}</div>
